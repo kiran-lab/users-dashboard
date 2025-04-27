@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <h2>Add User</h2>
+    <form [formGroup]="userCreationForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="w-100 mt-2">
+          <mat-label>Name</mat-label>
+          <input type="email" matInput formControlName="name">
+          <mat-error *ngIf="userCreationForm.get('name')?.errors?.['required'] && userCreationForm.get('name')?.touched">
+            Please enter name
+          </mat-error>
+          <mat-error *ngIf="userCreationForm.get('name')?.errors?.['minlength'] && userCreationForm.get('name')?.touched">
+            Please enter a valid name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-100 mt-2">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email">
+            <mat-error *ngIf="userCreationForm.get('email')?.errors?.['required'] && userCreationForm.get('email')?.touched">
+                Please enter email
+              </mat-error>
+              <mat-error *ngIf="userCreationForm.get('email')?.errors?.['pattern'] && userCreationForm.get('email')?.touched">
+                Please enter a valid email
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="w-100 mt-2">
+            <mat-label>Role</mat-label>
+                <mat-select formControlName="role">
+                  <mat-option *ngFor="let role of allowedRoles" [value]="role">{{role}}</mat-option>
+                </mat-select>
+          </mat-form-field>
+          <div class="d-flex justify-content-end">
+            <button mat-flat-button type="submit" [disabled]="!userCreationForm.valid" color="primary">Add</button>
+          </div>
+      </form>   
+</div>
+

@@ -1,0 +1,17 @@
+.mat-toolbar{
+    background-color: #1c4980 !important;
+    color: #fff !important;
+}
+
+.spin-container{
+    height: 500px;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    height: 48px !important;
+    border-radius: 5px !important;
+}
+
+::ng-deep .mdc-text-field--filled .mdc-floating-label {
+    font-size: 14px !important;
+}

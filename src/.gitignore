@@ -1,0 +1,14 @@
+# Node.js dependencies
+node_modules/
+
+# Angular build output
+/dist/
+
+# IDEs
+.vscode/
+.idea/
+
+# Angular specific
+.angular/
+
+
