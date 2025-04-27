@@ -44,7 +44,7 @@ export class AppComponent {
           this.users = [...this.allUsers];
         }
         else{
-          let filteredUsers = this.users.filter(item => item.name.includes(response || ''))
+          let filteredUsers = this.users.filter(item => item.name.toLowerCase().includes(response?.toLowerCase() || ''))
           this.users = [...filteredUsers]
         }
     })
